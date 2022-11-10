@@ -4,10 +4,9 @@
     <a href="">
     <img src="../assets/img/dc-logo.png" alt="">
     </a>
-
     <ul>
-    <li v-for="(label,index) in labels" key="index">
-        <a :href="labels.url"> {{labels[index].text}} </a>
+    <li v-for="(label,index) in labels" :key="index">
+        <a :href="label.url" :class="{'active' : label.current}"> {{label.text}} </a>
     </li>
     </ul>
    </div>
@@ -82,7 +81,7 @@
 @use '../styles/partials/mixins' as *;
 
     header{
-        padding: 1rem 0;
+        padding: 1rem 0rem ;
             .container{
             max-width: 1170px;
             margin: 0 auto ;
@@ -92,14 +91,26 @@
             }
         ul{
             list-style: none;
-            margin: 2.5rem 1rem 5rem;
-            @include dFlex;
-            
-
+            // margin: 2.5rem 1rem 5rem;
+            display: flex;
+            justify-content: end;
             li a{
-                display: inline-block;
-                padding: 1rem;
+                display: flex;
+                margin: 1rem;
                 text-decoration: none;
+                font-size: 0.6em;
+                transform: scale(1,1.8);
+                font-weight: 700;
+                color: $lightgrey;
+                border-bottom: 2px solid rgba(255, 255, 255, 0);
+                height: 80px;
+                justify-content: center;
+                align-items: center;
+
+                &.active, &:hover{
+                    border-bottom:  2px solid $blue;
+                    color: $darkgrey;
+                }
             }
         }
     }

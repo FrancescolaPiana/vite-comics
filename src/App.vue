@@ -1,13 +1,13 @@
 <template>
- <HeaderC/>;
+ <HeaderC/>
 
  <main>
- <ContentA/>;
- <ContentLinks/>;
- <ContentLists/>;
+ <ContentA/>
+ <ContentLinks/>
+ <ContentLists/>
  </main>
 
- <FooterC/>;
+ <FooterC/>
 </template>
 
 <script>
