@@ -1,0 +1,7 @@
+// pacchetti di classi css  utilizzabili con "@include name;"
+@mixin dFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+}
