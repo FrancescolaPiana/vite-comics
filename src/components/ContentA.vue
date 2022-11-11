@@ -22,7 +22,7 @@
             max-width: 1170px;
             margin: 0 auto ;
             h2{
-                color: white;
+                color: $white;
             }
         }
     }

@@ -81,7 +81,7 @@
 @use '../styles/partials/mixins' as *;
 
     header{
-        padding: 1rem 0rem ;
+        padding: 0.5rem 0rem ;
             .container{
             max-width: 1170px;
             margin: 0 auto ;
@@ -99,11 +99,11 @@
                 margin: 1rem;
                 text-decoration: none;
                 font-size: 0.6em;
-                transform: scale(1,1.8);
+                transform: scale(1,1.5);
                 font-weight: 700;
                 color: $lightgrey;
                 border-bottom: 2px solid rgba(255, 255, 255, 0);
-                height: 80px;
+                height: 68px;
                 justify-content: center;
                 align-items: center;
 

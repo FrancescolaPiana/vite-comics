@@ -4,8 +4,8 @@
             <ul>
             <li v-for="(link,i) in links" :key="i">
                 <a :href="link.url">
-                    <img :src="link.img" alt="">
-                    <h3>{{link.text}}</h3>
+                    <img :id="`img${i}`" :src="getImagePath(`../assets/img/${link.img}`)" class="img-icon">
+                    <span>{{link.text}}</span>
                 </a>
             </li>
             </ul>
@@ -22,31 +22,37 @@
                 {
                     text: "DIGITAL COMICS",
                     url: "#",
-                    img: "../assets/img/buy-comics-digital-comics.png"
+                    img: "buy-comics-digital-comics.png"
                 },
                 {
                     text: "DC MERCHANDISE",
                     url: "#",
-                    img: "../assets/img/buy-comics-merchandise.png"
+                    img: "buy-comics-merchandise.png"
                 },
                 {
                     text: "SUBSCRIPTION",
                     url: "#",
-                    img: "../assets/img/buy-comics-subscriptions.png"
+                    img: "buy-comics-subscriptions.png"
                 },
                 {
                     text: "COMIC SHOP LOCATOR",
                     url: "#",
-                    img: "../assets/buy-comics-shop-locator.png"
+                    img: "buy-comics-shop-locator.png"
                 },
                 {
                     text: "DC POWER VISA",
                     url: "#",
-                    img: "../assets/img/buy-dc-power-visa.svg"
+                    img: "buy-dc-power-visa.svg"
                 },
             ]
             }
         },
+
+        methods: {
+            getImagePath(imgPath){
+                return new URL(imgPath, import.meta.url).href;
+            }
+        }
     }
 </script>
 
@@ -56,7 +62,7 @@
 
     .principal{
         background-color: $blue;
-        padding: 3rem 0rem;
+        padding: 2rem 0rem;
         .container{
             max-width: 1170px;
             margin: 0 auto ;
@@ -67,8 +73,18 @@
                 li a{
                     text-decoration: none;
                     display: flex;
+                    align-items: center;
+                    gap: 10px;
                     margin: 1rem;
-                    color: white;
+                    color: $white;
+                    font-weight: 400;
+                    font-size: 0.8rem;
+                    .img-icon{
+                        height: 50px;
+                    }
+                    #img4{
+                        width: 50px;
+                    }
                 }
             }
         }
