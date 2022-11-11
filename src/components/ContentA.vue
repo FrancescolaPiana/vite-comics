@@ -1,12 +1,17 @@
 <template>
     <div class="principal">
         <div class="container">
-            <a class="card" href=""> 
+            <div class="labs">
+                <span>current series</span>
+            </div>
+            <a class="card" href="" v-for="(card,i) in products" :key="i" > 
                 <div class="cropped">
-                    <img :src="products[0].thumb" alt="" class="thumb">
+                    <img :src="card.thumb" :alt="card.series" class="thumb">
                 </div>
-                <h3 class="series">{{products[0].series}}</h3>
-                <h5 class="price">{{products[0].price}}</h5>
+                <div class="text">
+                    <h3 class="series">{{card.series}}</h3>
+                    <h5 class="price">{{card.price}}</h5>
+                </div>
             </a>
         </div>
     </div>
@@ -61,16 +66,38 @@
         .container{
             max-width: 1170px;
             margin: 0 auto ;
+            display: flex; gap: 15px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            .labs{
+                position: absolute;
+                top: -80px;
+                z-index: 100;
+                background-color: $blue;
+                padding: 1em 2em;
+                span{
+                    display: inline-block;
+                    font-size: 1.5em;
+                    text-transform: uppercase;
+                    color: $white;
+                    font-weight: 900;
+                    transform: scale(0.9,1.1);
+                }
+            }
             .card{
-                width: 250px;
+                width: 180px;
+                height: 260px;
                 background-color: $black;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding: 30px;
+                padding: 12px;
                 border-radius: 15px;
                 transition: background-color, padding 250ms ;
                 text-decoration: none;
+                justify-content: space-between;
                 
                 &:hover{
                     background-color: $grey;
@@ -94,14 +121,14 @@
                     }
                 }
                 .cropped{
-                    width: 192px;
-                    height: 192px;
+                    width: 150px;
+                    height: 160px;
                     display: flex;
                     align-items: center ;
                     overflow: hidden;
                     border-radius: 5px;
                     background-color: aliceblue;
-                    margin-bottom: 20px; 
+                    margin-bottom: 0px; 
                     position: relative;
                     
                     .hid1{
@@ -118,9 +145,16 @@
                         left: 0px;
                     }
                     .thumb{
-                        margin-bottom: -98px; 
+                        margin-bottom: -68px; 
+                        // margin-left: -15px;
+                        width: 150px;
                         transition: all 250ms;
                     }
+                }
+                .text{
+                    display: flex;
+                    flex-direction: column;
+                    align-self: flex-start;
                 }
                 .series{
                     display: inline-block;
@@ -129,8 +163,9 @@
                     text-transform: uppercase;
                     font-size: 0.9rem;
                     align-self: flex-start;
-                    margin-bottom: 8px;
                     transition: color 200ms;
+                    overflow: hidden;
+                    max-height: 40px;
                 }
                 .price{
                     display: inline-block;
