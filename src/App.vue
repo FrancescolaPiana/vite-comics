@@ -2,6 +2,7 @@
  <HeaderC/>
 
  <main>
+ <ContentJumbo/>
  <ContentA/>
  <ContentLinks/>
  <ContentLists/>
@@ -12,6 +13,7 @@
 
 <script>
   import HeaderC from './components/HeaderC.vue';
+  import ContentJumbo from './components/ContentJumbo.vue';
   import ContentA from './components/ContentA.vue';
   import ContentLinks from './components/ContentLinks.vue';
   import ContentLists from './components/ContentLists.vue';
@@ -21,10 +23,12 @@
   export default {
     components: {
       HeaderC,
+      ContentJumbo,
       ContentA,
       ContentLinks,
       ContentLists,
-      FooterC
+      FooterC,
+      
     }
   }
 </script>
