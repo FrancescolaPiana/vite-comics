@@ -99,7 +99,7 @@
                 margin: 1rem;
                 text-decoration: none;
                 font-size: 0.6em;
-                transform: scale(1,1.5);
+                transform: scale(1,1.8);
                 font-weight: 700;
                 color: $lightgrey;
                 border-bottom: 2px solid rgba(255, 255, 255, 0);
